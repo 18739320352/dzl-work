@@ -1,3 +1,3 @@
-document.body.onclick=function(){
-    alert("")
+document.div.onclick=function(){
+    bo
 }
