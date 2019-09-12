@@ -1,3 +1,3 @@
 document.div.onclick=function(){
-    bo
+    border:5px solid yellow;
 }
