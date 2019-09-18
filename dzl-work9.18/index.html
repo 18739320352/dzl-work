@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <div id="show"></div>
+    <input type="text" id="math1" value="">
+    <input type="text" id="math2" value="">
+    <input type="button" id="btn" value="计算">
+    <script>
+        //show.innerHTML=a;
+        var shu1=document.getElementById('math1');
+        var shu2=document.getElementById('math2');
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            console.log(Number(shu1.value)+Number(shu2.value));
+        }
+    </script>
+</body>
+</html>
