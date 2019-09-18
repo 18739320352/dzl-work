@@ -6,17 +6,21 @@
     <style></style>
 </head>
 <body>
+    <input type="text" id="math1" value=""><br />
+    <input type="text" id="math2" value=""><br />
+    <input type="button" id="btn" value="相加"><br />
     <div id="show"></div>
-    <input type="text" id="math1" value="">
-    <input type="text" id="math2" value="">
-    <input type="button" id="btn" value="计算">
     <script>
-        //show.innerHTML=a;
         var shu1=document.getElementById('math1');
         var shu2=document.getElementById('math2');
         var btn=document.getElementById('btn');
         btn.onclick=function(){
-            console.log(Number(shu1.value)+Number(shu2.value));
+        	if(shu1.value%1==0&&shu2.value%1==0){
+        		console.log(Number(shu1.value)+Number(shu2.value));
+            	show.innerHTML=Number(shu1.value)+Number(shu2.value);
+        	} else{
+        		alert("请输入整数");
+        	}
         }
     </script>
 </body>
