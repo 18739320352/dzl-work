@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.b{
+				background-color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+			var div=document.getElementsByTagName('div');
+			for( var i=0;i<div.length;i++){
+				div[i].style.width='50px';
+				div[i].style.height='50px';
+				if(i==2){
+					div[i].style.backgroundColor='';
+					div[i].className="b";
+				}else{
+					div[i].style.backgroundColor='red';
+				}
+				div[i].style.marginRight="20px";
+				div[i].style.display='inline-block';
+			}
+		</script>
+	</body>
+</html>
