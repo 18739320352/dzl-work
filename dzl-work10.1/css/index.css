@@ -12,7 +12,7 @@
 	background-color: #ffffff;
 	position: relative;
 	top: 30px;
-	left: 800px;
+	left: 45%;
 }
 .con{
 	width:65%;
@@ -36,7 +36,7 @@
     font-weight: bold;
     font-family: 'Playfair Display', 'Arial', sans-serif;
     font-style: normal;
-    padding: 50px 100px;
+    padding: 50px 156px;
     display: block;
 }
 #mulu>a{
@@ -204,7 +204,7 @@
 	flex-wrap:wrap ;
 }
 #big #min #tu1{
-	width:326px;
+	width:352px;
 	height:326px;
 	margin: 10px;
 	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
@@ -216,13 +216,13 @@
 	flex-wrap:wrap ;
 }
 #big #min2 #tu1{
-	width:326px;
+	width:352px;
 	height:326px;
 	margin: 10px;
 	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
 #big #min2 #min-tu1{
-	width:692px;
+	width:745px;
 	height: 694px;
 	display: flex;
 	justify-content:flex-start;
@@ -237,7 +237,7 @@
 	flex-wrap:wrap ;
 }
 #big #min2 #min-tu2 #tu2{
-	width:673px;
+	width:724px;
 	height:673px;
 	margin: 10px;
 	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
@@ -284,7 +284,7 @@
 }
 #heng-img{
 	position: relative;
-	width:845px;
+	width:910px;
 	height: 615px;
 	margin:0 10px ;
 }
@@ -319,7 +319,7 @@
 }
 #shu{
 	width: 350px;
-	margin: 20px auto;
+	margin: 70px auto;
 	text-align: center;
 }
 #shu a{
@@ -426,7 +426,7 @@
 	background-color:#f7f7f7 ;
 }
 #tubiao div{
-	width: 192px;
+	width: 207px;
 	height: 175px;
 	text-align: center;
 	line-height: 175px;
