@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box {
+        overflow: hidden; 
+        position: relative ;
+        width: 100%;
+        height: 600px;
+        
+    }
+#box>div {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 2px;
+}
+.bor{
+    border: 1px solid #777777;
+}
+.color{
+    border:1px solid #06e6e6;
+}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+     var arr=[
+          [1, 5, 2, 0, 3, 2], //1-6
+          [3, 4, 0, 1, 1, 5], //0-6
+          [5, 1, 2, 4, 0, 4],   //2-8
+          [2, 3, 0, 1, 2, 5],   //3-6
+          [0, 2, 5, 4, 3, 0],
+          [5, 3, 4, 3, 4, 1],
+         ];
+      var narr=[];
+       var box = document.getElementById('box'); 
+         for(var i = 0; i < 6;i++){
+             for(var j= 0; j < 6;j++){
+             var divs = document.createElement('div')     
+             box.appendChild(divs);
+           //行和列
+           divs. style.top=(i*50)+'px';
+           divs.style.left=(j*50)+'px';
+           divs.id=arr[i][j];
+           divs.className='bor'
+            divs.style.backgroundImage='url('+arr[i][j]+'.png)';
+           divs.onclick=function(){
+               if(narr.length<2){
+                   if(this.className=='color'){
+                       alert('请不要选中同一个');
+                    //    this.className='';
+                    }else{
+                       narr.push(Number(this.id));
+                       this.className='color';
+                   }
+                  
+               }else{
+                    narr=[];
+
+                    var ss=box.querySelectorAll('#box>div')
+                    for(var z=0;z<ss.length;z++){
+                        ss[z].className='bor';
+                    }
+                    narr.push(Number(this.id));
+                    this.className='color';
+               }
+               if(narr.length==2){
+                  if(narr[0]-narr[1]==0){           
+                      var ww=box.querySelectorAll('.color');
+                      for(var e=0;e<ww.length;e++){
+                          ww[e].style.backgroundImage='';
+                          ww[e].className='bor';
+                          ww[e].onclick=null;
+                      }
+                  }
+               }
+              console.log(narr);
+           }
+        }
+
+    }
+
+    </script>
+</body>
+</html>
