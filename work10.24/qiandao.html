@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="int" placeholder="请输入名字">
+    <button id="btn">签到</button>
+    <script>
+        var int=document.getElementById('int');
+        var btn=document.getElementById('btn');
+        var arr=['杨立超','郑直','杨少萌','付华杰','王帅杰','李新龙','曹宇航','李傲','朱扬帆','张从建'];
+        btn.onclick=function(){
+            var b=int.value;
+            var sarr=[];
+            sarr.push(b);
+            console.log(sarr);
+        }
+        
+    </script>
+</body>
+</html>
