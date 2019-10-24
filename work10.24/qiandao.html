@@ -7,17 +7,46 @@
     <title>Document</title>
 </head>
 <body>
+	<div id="div"></div>
     <input type="text" id="int" placeholder="请输入名字">
     <button id="btn">签到</button>
+    <!--<button id="btn2">未签到</button>-->
+    <div id="div1"></div>
+    <div id="div2"></div>
     <script>
         var int=document.getElementById('int');
         var btn=document.getElementById('btn');
-        var arr=['杨立超','郑直','杨少萌','付华杰','王帅杰','李新龙','曹宇航','李傲','朱扬帆','张从建'];
+        var div=document.getElementById('div');
+        var div1=document.getElementById('div1');
+        var div2=document.getElementById('div2');
+        var arr=['杨立超','郑直','王帅杰','李新龙','曹宇航'];
+        div.innerHTML='签到人：'+arr;
         btn.onclick=function(){
             var b=int.value;
             var sarr=[];
-            sarr.push(b);
-            console.log(sarr);
+			if(b!=arr[arr.indexOf(b)]){
+				alert("不存在此名字");
+			}
+			else{
+				if(sarr.length>=arr.length){
+					alert("都已签到");
+				}
+				else{
+					if(b!=sarr[sarr.indexOf(b)]){
+						sarr.push(b);
+						alert("签到成功");
+					}else{
+						alert("已签到");
+					}
+				}
+			}
+			console.log(sarr);
+			if(sarr.length!=arr.length){
+				div1.innerText=("还有"+(arr.length-sarr.length)+"位未签到");
+			}else{
+				div1.innerText="已经全部签到完成";
+			}
+			div2.innerHTML='已签到'+sarr;
         }
         
     </script>
