@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style type="text/css">
+    	td{
+    		border: 1px solid #777777;
+    	}
+    	.shu{
+    		width: 50px;
+    		height: 23px;
+    		border: none;
+    	}
+    </style>
+</head>
+<body>
+    <table>
+    	<tr>
+    		<td></td>
+    		<td>名称</td>
+    		<td>数量</td>
+    		<td>单价</td>
+    		<td>合计</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox" id="in1"></td>
+    		<td>华为mate20</td>
+    		<td><input type="number" value="0" disabled="disabled" class="shu" id="num1"></td>
+    		<td id="danjia1">2000</td>
+    		<td><span id="heji1">0</span></td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox" id="in2"></td>
+    		<td>小米9</td>
+    		<td><input type="number" value="0" disabled="disabled" class="shu" id="num2"></td>
+    		<td id="danjia2">2000</td>
+    		<td><span  id="heji2">0</span></td>
+    	</tr>
+    	<tr>
+    		<td colspan="2">数量合计：</td>
+    		<td><span id="zongshu">0</span></td>
+    		<td>价格合计：</td>
+    		<td><span id="zongjia">0</span></td>
+    	</tr>
+    	
+    </table>
+    <script>
+    	$("#in1").change(function(){
+			if($("#in1").prop("checked")==true){
+				$("#num1").val(1).removeAttr("disabled").change(function(){
+					if($("#num1").val()>0){
+						var num0 = $("#num1").val()*$("#danjia1").text();
+						$("#heji1").text(num0);
+						$("#zongshu").text(Number($("#num1").val()));
+						$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+					}else if($("#num1").val()==0){
+						$("#num1").val(0).attr("disabled","disabled");
+						$("#in1").prop("checked",false);
+						$("#heji1").text(0);
+					}
+				})
+					$("#heji1").text($("#danjia1").text()*$("#num1").val());
+					$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+					}else{
+						$("#heji1").text(0);
+						$("#num1").val(0).attr("disabled","disabled");
+					}
+			$("#zongshu").text(Number($("#num1").val()));
+		})
+    	$("#in2").change(function(){
+			if($("#in2").prop("checked")==true){
+				$("#num2").val(1).removeAttr("disabled").change(function(){
+					if($("#num2").val()>0){
+						var num0 = $("#num2").val()*$("#danjia2").text();
+						$("#heji2").text(num0);
+						$("#zongshu").text(Number($("#num1").val())+Number($("#num2").val()));
+						$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+					}else if($("#num2").val()==0){
+						$("#num2").val(0).attr("disabled","disabled");
+						$("#in2").prop("checked",false);
+						$("#heji2").text(0);
+					}
+				})
+				$("#heji2").text($("#danjia2").text())
+				$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+			}else{
+				$("#heji2").text(0);
+				$("#num2").val(0).attr("disabled","disabled");
+				$("#zongjia").text(0);
+			}
+		})
+		$("#in1,#in2").change(function(){
+			$("#zongshu").text(Number($("#num1").val())+Number($("#num2").val()));
+			$("#num1,#num2").change(function(){
+				$("#zongshu").text(Number($("#num1").val())+Number($("#num2").val()));
+				$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+			})
+			$("#zongjia").text(Number($("#heji1").text())+Number($("#heji2").text()));
+		})
+    </script>
+</body>
+</html>
